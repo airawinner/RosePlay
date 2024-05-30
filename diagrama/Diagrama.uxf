@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>77</y>
+      <w>210</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes> ControladorNovasMusicas
+-
+-nomePlaylist:StringProp
+- PlayList playAlterar
+- principalController: ControladorTocador
+-static contador : 0
+- textFieldTexto:TextField
+- ImageView :imgemPlayList
+- img:ImageView
+- textoEditavel:StringBuilder
+- songName:Label
+- tocadorVar :TocasVariasMusicas
+- artist:Label
+- NomePlayList:Label
+- ImgMUsicaAtual:ImageView	
+-scrollPane:ScrollPane 
+-  TíyulodaMusica:Label
+-  NomedoArtista: Label
+-
+	+setData(musica:Musica )
+	-AdicionarPlayListTela(playlist:PlayList) 
+	+AdicionarArtista(artista:Artista )
+ 	-AdicionarAlbum(album:Album)
+	-setMusicAtual(musica:Musica )
+	- abrirArquivo() 
+	-carregarPlayList(playlist :PlayList) 
+	- musicaAtual( musica: Musica) 
+	-NovaPlaylist( event:MouseEvent) :FXML
+	-EventoImagem( event:MouseEvent) :FXML
+	-TecladoPressionado( event:KeyEvent) :FXML
+	-carregarSlider() 
+	void atualizarFxmlMusicaAtual()	
+	-LidarcomImagem( event:MouseEvent) :FXML 
+	
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>84</y>
+      <w>231</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>
+
+ ControladorPlaylist
+-
+-principalController:ControladorTocador 
+- tocadorVar:TocasVariasMusicas
+- tratamento:TratamentoDadosTexto
+-VoboxAdionarMusicas: VBox 
+- VboxTudoPlayList:VBox
+- comboBoxMusicas:ComboBox&lt;String&gt;
+-VboxPlayList:VBox 
+- Imagemview:ImageView
+- NomePlaylIST:Label
+- imagIcon:ImageView
+- Incrementar: Label
+-  scrollPane:ScrollPane
+- songName:Label
+- nomeMusica:Label
+- imgPlaylistMusicA:ImageView
+- textFieldTexto:TextField
+- remover:ImageView
+-
+	 +atualizartela( playlist:PlayList)
+	 +abrirArquivo() 
+	-lidarcomEventosMouse(event:MouseEvent) :FXML
+	-setData() 	
+	+setInfoPlaylist(playlist:(PlayList ) 
+	- getTitulosMusicas() :ObservableList&lt;String&gt;:FXML
+	
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>1155</y>
+      <w>182</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Album
+-
+-FotoCapa : String
+-título : String
+-
+Album(titulo :String, fotoCapa:String):
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>651</x>
+      <y>1008</y>
+      <w>182</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Musica
+
+-
+-Artista : String
+-duracao: int
+-filePath: File
+-MusicaMp3 :String
+-titulo : String
+-
+Musica();
+converter(): String 
+converter(tempo:Double): String
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>588</x>
+      <y>1337</y>
+      <w>182</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>InfoAlbumArtista 
+-
+ 
+	- Artistas: List&lt;Artista&gt;
+	- Albuns: List&lt;Album&gt;
+	- tratamento: TratamentoDadosTexto
+-
+	InfoAlbumArtista()
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>637</x>
+      <y>875</y>
+      <w>182</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Playlist
+-
+-cover : String
+-musicas: List
+-nome: String
+-
+procurarMuicaNome(nome: String): Musica
+procurarMusica(titulo : String): String 
+AdicionarMusica(musica: Musica)
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>812</y>
+      <w>182</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>~Interface~
+-
+                        Tocador
+-
+play(Musica: String)
+pause()
+stop()
+ajustarVolume(volume:Double)
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1085</x>
+      <y>1064</y>
+      <w>294</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>TocasVariasMusicas
+-
+	 - reproduzir :TratamentoDadosTexto
+	 - TodasMusicas : static  List&lt;Musica&gt;
+	 -  Playlists: ist&lt;PlayList&gt;
+   -IndeieAtual: int-
++ProcurarMusicasEmTodasMusicas() :Musica
++procurarPlaylist(musica:String) :Playlist
++alterarPlaylist(novoNome:String, capa:String, antigonome:String)
++ajustarFilho()
++AcessaMusicaAtualMae()	
++indiceMusicaAtual(musicaAtual:String):int
++ProximaMusica(atual:int): String 
++MusicaAnterior(atual:int):String
++MusicaInicialString() :String 
++procurarMusica(Nome:String) : String
++procurarMusicaFora( titulo:String): String
++MusicaAtualSTring( Musica: musica) :String
++MusicaAtual(nomeMp3:String):Musica
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>777</x>
+      <y>1274</y>
+      <w>315</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>TratamentoDadosTexto
+-
+- TodasMusicas:List&lt;Musica&gt;
+- Playlists :List&lt;PlayList&gt; 
+- Artistas:List&lt;Artista&gt;
+- Albuns :List&lt;Album&gt; 
+- Texto:ArrayList&lt;String&gt;
+- static arquivo :String
+- static  arquivoPlayList :String
+- static artistas :  String 
+- static  albuns: String
+-
++ procurarMusicaAqui(nome:String):Musica 
++converter(numeroString:String);int 	
+	+lermusicasdaPlaylist(indice,int):List&lt;Musica&gt;
+	+lerPlayListsDoArquivo() :List&lt;PlayList&gt; 
+	+lerMusicasDoArquivo(): List&lt;Musica&gt; 
+	+lerAlbuns():List&lt;Album&gt; 
+	+lerArtistas() :List&lt;Artista&gt;
+	+converterPlaylistsEmTexto( playlists:List&lt;PlayList&gt;) List&lt;Playlist&gt;
+		 
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>196</x>
+      <y>0</y>
+      <w>1001</w>
+      <h>679</h>
+    </coordinates>
+    <panel_attributes>Controladores
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1260</x>
+      <y>147</y>
+      <w>406</w>
+      <h>245</h>
+    </coordinates>
+    <panel_attributes>application
+
+
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1274</x>
+      <y>238</y>
+      <w>112</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Main
+-
+Main(args: sTRING[])
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1274</x>
+      <y>294</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Artistas&amp;Albuns.fxml
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1274</x>
+      <y>329</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>MusicaAtual.fxml
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1526</x>
+      <y>308</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>MusicasPlayList.fxml
+
+
+fg=DARK_GRAY
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1463</x>
+      <y>350</y>
+      <w>105</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>PlayLists.fxml
+
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1554</x>
+      <y>266</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>TocadorPlay.fxml
+
+
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1498</x>
+      <y>210</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>TocadorMenu.fxml
+
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1414</x>
+      <y>322</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>song.fxml
+
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>938</x>
+      <y>1071</y>
+      <w>168</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>917</y>
+      <w>63</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>70.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>651</x>
+      <y>1141</y>
+      <w>42</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>777</x>
+      <y>1141</y>
+      <w>154</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>805</x>
+      <y>889</y>
+      <w>294</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>400.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>826</x>
+      <y>1064</y>
+      <w>280</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>380.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>812</y>
+      <w>168</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>MediaTocar
+-
+-todasMusicas :List&lt;Musica&gt;
+-Playlists: List&lt;PlayList&gt;
+-reroduzir :TratamentoDadosTexto
+-
+mediaPlayer: MediiaPlayer
+musica :String 
++currentPosition: Durantion
++ajustarTempo(tempo: DoubleE)
++Tocarnovo(musica: String)
++play(musica:Musica)
++playPlaylist(musica:Musica)
++stop()
++pause()
++ajusarVolume(volume;Double)
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>259</x>
+      <y>819</y>
+      <w>140</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>servicos_Aita
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>28</x>
+      <y>588</y>
+      <w>77</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Imagens
+
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>7</x>
+      <y>532</y>
+      <w>140</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>img
+-
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>28</x>
+      <y>742</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>style.css
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>679</y>
+      <w>140</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>CSS
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>266</x>
+      <y>861</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>TextFileApps-
+-
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1190</x>
+      <y>273</y>
+      <w>84</w>
+      <h>343</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;471.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>588</y>
+      <w>84</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>504</y>
+      <w>70</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>819</y>
+      <w>140</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>672</y>
+      <w>161</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>63</y>
+      <w>210</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>
+ControladorMusicasPlaylist
+-
+-  principalController :ControladorTocador
+-  controladorMusicasPlay:ControladorMusicasPlaylist
+-  tocadorVar :TocasVariasMusicas
+- idPlay:ImageView; FXML
+-songName:Label  : FXML
+- remover:ImageView: fXML
+- nomeMusica:Label: FXML
+- static contador=0: int :FXML
+- imgPlaylistMusica:ImageView: FXML
+-textFieldTexto:TextField : FXML
+-	
+-TecladoPressionado(event:KeyEvent) FXML 
++atualizarFxmlMusicaAtual()
++carregarSlider() 
+-TocarMusica( event:MouseEvent) FXML
+	
+____
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>917</x>
+      <y>56</y>
+      <w>252</w>
+      <h>602</h>
+    </coordinates>
+    <panel_attributes>ControladorTocador
+-
+-informacoes :InfoAlbumArtista :FXML
+- tocadorVar :TocasVariasMusicas :FXML
+- tratamento: TratamentoDadosTexto :FXML
+- static iniciado :0 :FXML
+- salvar:ImageView :FXML
+- albuns:Label  :FXML
+- artistas:Label :FXML
+- HboxMusicaAtual: HBox :FXML
+- VboxMaior:VBox :FXML
+- VboxMusicaAtual:VBox :FXML
+- Recentes: VBox :FXML
+- botaoProximo:ImageView :FXML
+- playlistsContainer:VBox :FXML
+- BotaoAnterior:ImageView :FXML
+- ScrollPlayLists:ScrollPane :FXML
+- volumeSlider:Slider :FXML
+- timeline:Timeline :FXML
+- ImageMenu:ImageView :FXML
+- slider:Slider :FXML
+- recentlyPlayedContainer:HBox :FXML 
+- favoriteContainer:HBox :FXML
+-labelTime: Label :FXML
+- LabelPlayLists:Label :FXML
+- Contador:Label :FXML
+- NovaPlayList:ImageView :FXML
+- BotaoPlay:ImageView: FXML
+- BotaoPause:ImageView: FXML
+- reproducaoAleatoria:ImageView: FXML
+- ReproducaoUnica:ImageView: FXML	
+- Scroller:ScrollPane :FXML
+- botaoPlayInicial:ImageView : FXML
+- Menu:Label :FXML
+-TodasMusicas:Label:FXML
+-
++lerPlayList()
++menu()
+-ConfiurarMenu( event:MouseEvent) :FXML
++adicionarArtista() 	
+- ajustartempo( event:MouseEvent) :FXML
++adicionarAlbum()
+-lidarcomMouse( event:MouseEvent) :FXML 
++NovaPlaylist(event:MouseEvent )
++iniciarSlider() 
++atualizarSlider( duracaoTotalSegundos :int) 
++reiniciarSlider()
++pausarSlider()
++ atualizarIconesMusicaAtual(Musica Musica) 
+-AdicionarComponentes(vbox:VBox) 
+-AdicionarMuscaAtual(musica:VBox ) 	
+-salvarInformaoes(event:MouseEvent ) :FXML
+
+
+	
+	
+	
+
+
+	
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1022</x>
+      <y>903</y>
+      <w>112</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1162</x>
+      <y>973</y>
+      <w>21</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>504</x>
+      <y>777</y>
+      <w>896</w>
+      <h>728</h>
+    </coordinates>
+    <panel_attributes>PlayerLogica
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>595</x>
+      <y>1197</y>
+      <w>182</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Artista
+
+-
+-FotoCapa : String
+-título : String
+-
+Album(titulo :String, fotoCapa:String):
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1533</x>
+      <y>238</y>
+      <w>35</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1596</x>
+      <y>280</y>
+      <w>35</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1351</x>
+      <y>224</y>
+      <w>161</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;30.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1505</x>
+      <y>238</y>
+      <w>35</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1449</x>
+      <y>238</y>
+      <w>77</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>231</y>
+      <w>175</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1358</x>
+      <y>231</y>
+      <w>161</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;140.0;210.0;10.0</additional_attributes>
+  </element>
+</diagram>
